@@ -21,18 +21,22 @@ const Letters = () => {
         HOME PAGE
       </Link>
       <div id="cat">
-        {!data ? <h2>Nerasta</h2> : data.map((value) => (
-          <div className="col-6 mb-3" key={value.idMeal}>
-            <Link to={"/meal/" + value.idMeal}>
-              <img
-                className="img"
-                src={value.strMealThumb}
-                alt={value.strMeal}
-              />
-            </Link>
-            <h3>{value.strMeal}</h3>
-          </div>
-        ))}
+        {!data ? (
+          <h2>Nerasta</h2>
+        ) : (
+          data.map((value) => (
+            <div className="col-6 mb-3" key={value.idMeal}>
+              <Link to={"/meal/" + value.idMeal}>
+                <img
+                  className="img"
+                  src={value.strMealThumb}
+                  alt={value.strMeal}
+                />
+              </Link>
+              <h3>{value.strMeal}</h3>
+            </div>
+          ))
+        )}
       </div>
     </>
   );

@@ -1,7 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-
 const Area = () => {
   const { name } = useParams();
   const [data, setData] = useState([]);
@@ -18,7 +17,6 @@ const Area = () => {
   }, []);
   return (
     <>
-      
       <h1>Area : {name}</h1>
       <Link to="/" className="btn btn-warning">
         HOME PAGE

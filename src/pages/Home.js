@@ -46,7 +46,6 @@ const Home = () => {
   };
 
   const randMeal = (e) => {
-   
     e.preventDefault();
     fetch("https://www.themealdb.com/api/json/v1/1/random.php")
       .then((resp) => resp.json())
@@ -59,15 +58,11 @@ const Home = () => {
       .then((resp) => setList(resp.categories));
   }, []);
 
- 
-  
   const catList = (e) => {
     const sel = e.target.value;
     fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=" + sel)
       .then((resp) => resp.json())
       .then((resp) => setData(resp.meals));
-      
-     
   };
 
   return (
@@ -84,20 +79,20 @@ const Home = () => {
       </form>
       <div className="lett">
         {upLet.map((el, index) => (
-        <Link to={`/letters/${el}`} key={index}>
-        {el}
-      </Link>
+          <Link to={`/letters/${el}`} key={index}>
+            {el}
+          </Link>
         ))}
       </div>
 
       <select onChange={catList}>
-      <option>Select Category</option>
-       {list &&
-         list.map((val, index) => (
-           <option value={val.strCategory} key={index} >
-             {val.strCategory}
-          </option> 
-        ))}
+        <option>Select Category</option>
+        {list &&
+          list.map((val, index) => (
+            <option value={val.strCategory} key={index}>
+              {val.strCategory}
+            </option>
+          ))}
       </select>
 
       <button className="btn btn-danger" onClick={randMeal}>

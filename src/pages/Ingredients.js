@@ -18,7 +18,6 @@ const Ingredients = () => {
 
   return (
     <>
-      
       <h1>Ingredients : {name}</h1>
       <Link to="/" className="btn btn-warning">
         HOME PAGE
